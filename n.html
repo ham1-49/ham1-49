@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+
+
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(to right, #5a7db6, #e89eae); /* Dark Purple */
+            color: #2c0404;
+            padding: 20px 0;
+            font-family: 'Playfair Display', serif;
+           font-style: italic;
+           text-decoration: underline;
+
+        }
+
+        header h1 {
+            font-size: 3rem;
+            
+        }
+
+        /* Add these styles for the sidebar */
+        .sidebar {
+  background: linear-gradient(to bottom, #5a7db6, #e89eae);
+  height: 100vh;
+  position: fixed;
+  font-family: 'Crimson Text', serif;
+  top: 0;
+  left: 0;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  animation: bounceIn 1.5s ease-out; /* Change to bounceIn animation */
+
+}
+
+@keyframes bounceIn {
+  from {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(50px);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 15px;
+}
+
+.sidebar-list a {
+    text-decoration: none;
+    color: #2c0404;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 8px; /* Add padding for a more clickable area */
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease; /* Added background-color and transform transitions */
+    display: block; /* Ensure block-level display for full-width hover effect */
+}
+
+.sidebar-list a:hover {
+    color: #C4DFE6;
+    background-color: #4fa2ad; /* Change the background color on hover */
+    transform: translateX(6px); /* Move the link 5 pixels to the right on hover */
+    border-radius: 10px;
+}
+
+
+
+/* Adjust the margin for the container to make room for the sidebar */
+.container {
+    margin-left: 210px; /* Adjust this margin to match the sidebar width */
+}
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-list a:hover {
+            color: #f4a2a2; /* Lighter shade on hover */
+        }
+
+       
+
+        section#home {
+            padding: 2rem 0;
+            background-image: url('oak-wood-texture-design-background.jpg'); /* Replace with your image file */
+            background-size: cover;
+            background-position: top;
+            color: #de5b5b;
+            text-align: center;
+            font-size: 1.15rem;
+        }
+
+        h2 {
+            color: #efb7b7;
+        }
+
+        p {
+            color: #efb7b7;
+        }
+         
+       
+        .course-image {
+    max-width: 85%; /* Set the maximum width to ensure it doesn't exceed the container */
+    height: 700px; /* Maintain the aspect ratio */
+    border-radius: 8px; /* Optional: Add border-radius for a rounded corner effect */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add box-shadow for a subtle shadow effect */
+    
+}
+
+
+
+        
+        section#courses {
+            padding: 2rem 0;
+            background-color: #af7f5e;
+            background-image: url('oak-wood-texture-design-background.jpg'); /* Replace with your image file */
+            background-size: cover;
+            background-position: bottom;
+            text-align: center;
+            font-size: 1.3rem;
+            text-decoration: underline;
+        }
+        
+
+        section#courses h2,
+        section#about h2,
+        section#reviews h2,
+        section#contact h2 {
+            color: #05182e; /* Text color for section headings in other sections */
+        }
+         
+        section#home,
+        section#about,
+        section#reviews,
+        .review,
+        section#contact {
+            color: #481d57; /* Text color for regular text in other sections */
+        }
+
+        h2 {
+            color: #3c0202; /* Dark PurpleText color for the "Welcome to Azmat Classes */
+        }
+
+        p {
+            color: #000000;
+;
+        }
+
+        section#about {
+            text-align: center; /* Centered text in the "About Us" section */
+            font-size: 1.3rem;
+            background-color: #000000;
+            background-image: url('oak-wood-texture-design-background.jpg'); /* Replace with your image file */
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        section#reviews {
+            text-align: center; /* Centered text in the "Student Reviews" section */
+            background-image: url('oak-wood-texture-design-background.jpg'); /* Replace with your image file */
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .review {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding: 15px;
+  background: linear-gradient(-45deg, #b2dae3, #efcb95, #b2dae3);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite, fadeIn 2.5s ease-out; /* Add background animation and fadeIn animation */
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Cormorant', serif;
+font-style: italic;
+
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.reviews-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.review-container {
+    max-width: 400px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #ed9e9e;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    
+
+}
+
+
+
+.review p {
+    color: #2e0909;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+.review .author {
+    font-style: italic;
+    color: #480505;
+}
+
+
+
+        section#contact {
+            text-align: center; /* Centered text in the "Contact Us" section */
+            background-color: #fccbcb; /* Light Gray background */
+            padding: 40px 0; /* Add more padding for a spacious look */
+            background-image: url('oak-wood-texture-design-background.jpg');
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .contact-info {
+            max-width: 600px; /* Set maximum width for contact information */
+            margin: 0 auto 30px; /* Center and add bottom margin to the contact information */
+            padding: 20px;
+            background: linear-gradient(-45deg, #7ea1da, #eb93a6);
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+        }
+
+        .contact-info p {
+            color: #640404;
+
+;
+            margin-bottom: 15px;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin: 10px 0;
+            color: #5b0505;
+ /* Darker text color for stronger emphasis */
+        }
+
+        .contact-info li strong {
+            font-weight: bold;
+        }
+
+        .social-media {
+            text-align: center;
+            margin-top: 30px; /* Increase margin for separation */
+        }
+
+        .social-media p {
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        .social-media a {
+            display: inline-block;
+            margin: 10px;
+            background-color: #fccbcb; /* Light Gray background */
+            /* Dark Purple background for social media icons */
+            padding: 10px;
+            border-radius: 0; /* Remove circular border-radius */
+            transition: background-color 0.3s ease; /* Smooth transition on hover */
+        }
+
+        .social-media a:hover {
+    
+            background-color: #efa3a3; /* Darker Purple on hover */
+        }
+
+        .social-media img {
+            width: 40px; /* Slightly smaller icons */
+            height: auto;
+            /* Remove border-radius property for a rectangular shape */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: linear-gradient(to right, #e89eae, #5a7db6)
+            
+        }
+         
+        
+        .floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #36032b; /* Dark Purple */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  animation: pulse 3s infinite; /* Add pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.floating-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
+
+    </style>
+    <title>Azmat Classes</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="sidebar">
+                
+                <ul class="sidebar-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#reviews">Student Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <!-- Sidebar content goes here if needed -->
+            </div>
+            <div class="main-header">
+                <h1>Azmat Classes</h1>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    
+    
+
+    <section id="home" class="container">
+        <h2><span style="font-weight: bold;">Tutoring Classes in Kondhwa BD Pune</span></h2>
+        <p>Azmat Classes in Pune, MH is your one-stop learning hub that provides quality tuition classes for all grade levels. From basics to advanced topics, we help students excel in their academics. Our experienced faculty ensures that all the students are given individual attention and guidance to sharpen their skills.</p>
+    </section>
+
+    <section id="courses" class="container">
+        <h2>Our Courses</h2>
+        <img src="Your paragraph text.png" alt="Course Image" class="course-image">
+        <!-- Add any additional content about your courses here -->
+    </section>
+    
+
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p>My name is Azmat, and I am the founder of Azmat Classes, an educational institute located in Pune, Maharashtra. With a decade of experience, we specialize in delivering high-quality education and guidance to students across all grades and levels.</p>
+
+        <p>Our establishment has witnessed substantial growth and development, thanks to a team of seasoned and dedicated educators who are deeply committed to assisting students in attaining their educational objectives.</p>
+
+        <p>At Azmat Classes, we offer a comprehensive range of services, including personalized one-on-one tutoring, group classes, and online learning opportunities. Our overarching aim is to provide a nurturing and intellectually stimulating environment that empowers students to reach their full academic potential.</p>
+
+        <p>Each student benefits from tailor-made learning plans, ensuring a customized educational experience that optimizes their learning journey. Dedicated to the pursuit of academic excellence, we are resolute in our commitment to helping students achieve their educational goals.</p>
+
+        <p>Our focus is on delivering an enriching learning experience that maximizes the benefits of our educational programs.</p>
+                    </section>
+
+
+                 <section id="reviews" class="container">
+                  <h2>Student Reviews</h2>
+                    <div class="reviews-container">
+
+                 <div class="review">
+                   <p>"Azmat classes  has been a game-changer for my academic journey. The faculty is exceptionally knowledgeable and dedicated. The personalized attention I received here greatly contributed to my success in the Maharashtra Board exams. I highly recommend it to all students.".</p>
+                <p class="author">- Sameer Pasha</p>
+                  </div>
+                  <div class="review">
+                    <p>"Choosing Azamat classes was one of the best decisions I made. The interactive classes and exam-focused coaching significantly boosted my confidence. The result? I achieved my academic goals with flying colors!"</p>
+                 <p class="author">- xyz</p>
+                   </div>
+
+                   <div class="review">
+                    <p>"The faculty at Azamt classes  understands the nuances of Maharashtra Board curriculum. Their teaching methods are engaging, and the regular assessments helped me stay on track. I can't thank them enough for their guidance and support."</p>
+                 <p class="author">- zyx</p>
+                   </div>
+        
+        
+
+        <!-- Add more reviews as needed -->
+
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        
+        <div class="contact-info">
+            <p>If you have any questions or inquiries, feel free to reach out to us:</p>
+            <ul>
+                <li><strong>Phone:</strong> +91 7066XXXXX</li>
+                <li><strong>Email:</strong> <a href="mailto:xyz@gmail.com">xyz@gmail.com</a></li>
+                <li><strong>Address:</strong> 123 Main Street, Pune, MH, India</li>
+            </ul>
+        </div>
+
+        <div class="social-media">
+            <p>Connect with us on social media:</p>
+            <a href="https://www.instagram.com/azmatclasses?igsh=YmVpNTV1NnR6NXg2" target="_blank">
+                <img src="inst.png" alt="Instagram Logo">
+            </a>
+            <a href="https://www.instagram.com/azmatclasses?igsh=YmVpNTV1NnR6NXg2" target="_blank">
+                <img src="107153_circle_facebook_icon.png" alt="Facebook Logo">
+            </a>
+            <a href="https://www.instagram.com/azmatclasses?igsh=YmVpNTV1NnR6NXg2" target="_blank">
+                <img src="yt.png" alt="YouTube Logo">
+            </a>
+            <a href="https://www.instagram.com/azmatclasses?igsh=YmVpNTV1NnR6NXg2" target="_blank">
+                <img src="twt.png" alt="Twitter Logo">
+            </a>
+            <!-- Add more social media icons as needed -->
+        </div>
+
+        <!-- Add a contact form if you want visitors to be able to send messages directly -->
+
+    </section>
+      
+      
+      
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Azmat Classes</p>
+        </div>
+    </footer>
+
+    <div class="floating-button">
+        <a href="mailto:moviesham45@gmail.com">Get in Touch</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+</html>
